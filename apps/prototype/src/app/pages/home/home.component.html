@@ -1,1 +1,14 @@
-<p>home works!</p>
+<nz-row nzJustify="center">
+  <nz-space nzDirection="vertical" nzSize="large">
+    <h1 *nzSpaceItem>Welcome to the greenkayak checkin app</h1>
+    <button
+      *nzSpaceItem
+      nz-button
+      nzBlock
+      nzType="primary"
+      (click)="onCheckIn()"
+    >
+      Go to check-in page
+    </button>
+  </nz-space>
+</nz-row>

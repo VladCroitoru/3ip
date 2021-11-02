@@ -10,6 +10,10 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
+    path: 'checkin/:id',
+    component: CheckinComponent,
+  },
+  {
     path: 'checkin',
     component: CheckinComponent,
   },

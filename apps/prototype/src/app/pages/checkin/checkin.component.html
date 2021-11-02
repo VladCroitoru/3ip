@@ -1,1 +1,8 @@
-<p>checkin works!</p>
+<nz-col>
+  <nz-row nzJustify="center">
+    <input nz-input placeholder="Enter your trip Id" [(ngModel)]="tripId" />
+    <button nz-button nzType="primary" (click)="onConfirmTripId()">
+      Confirm trip Id
+    </button>
+  </nz-row>
+</nz-col>
