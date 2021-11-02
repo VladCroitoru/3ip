@@ -11,6 +11,6 @@
 - [x] Set up frontend app
 - [x] Set up backend app
 - [x] Import frontend components
-- [ ] Set up routing for frontend components
+- [x] Set up routing for frontend components
 - [ ] Set up a database (using a Docker container)
 - [ ] Connect backend to database
