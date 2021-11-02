@@ -14,3 +14,4 @@
 - [x] Set up routing for frontend components
 - [ ] Set up a database (using a Docker container)
 - [ ] Connect backend to database
+- [ ] Add running instructions
