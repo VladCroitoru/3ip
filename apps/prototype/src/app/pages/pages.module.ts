@@ -6,6 +6,7 @@ import { CheckinComponent } from './checkin/checkin.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ThemeModule } from '../theme/theme.module';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { DoneComponent } from './done/done.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
     CheckinComponent,
     CheckoutComponent,
     LeaderboardComponent,
+    DoneComponent,
   ],
   imports: [CommonModule, PagesRoutingModule, ThemeModule],
 })

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CheckinComponent } from './checkin/checkin.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { DoneComponent } from './done/done.component';
 import { HomeComponent } from './home/home.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path: 'checkout',
     component: CheckoutComponent,
+  },
+  {
+    path: 'checkout/:id/done',
+    component: DoneComponent,
   },
   { path: '**', redirectTo: 'home' },
 ];
