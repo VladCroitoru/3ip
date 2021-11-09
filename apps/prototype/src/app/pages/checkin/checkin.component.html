@@ -1,8 +1,50 @@
-<nz-col>
+<ng-container
+  *ngIf="hasValidBooking(); then validBooking; else confirm"
+></ng-container>
+
+<ng-template #confirm>
   <nz-row nzJustify="center">
-    <input nz-input placeholder="Enter your trip Id" [(ngModel)]="tripId" />
-    <button nz-button nzType="primary" (click)="onConfirmTripId()">
-      Confirm trip Id
+    <nz-space nzDirection="vertical" nzSize="large">
+      <ng-container *nzSpaceItem>
+        <input
+          nz-input
+          class="std-width"
+          placeholder="Enter your Booking ID"
+          [(ngModel)]="bookingId"
+        />
+      </ng-container>
+      <ng-container *nzSpaceItem>
+        <button
+          nz-button
+          nzBlock
+          nzType="primary"
+          (click)="onConfirm()"
+          [disabled]="bookingId?.length === 0"
+        >
+          Confirm Booking ID
+        </button>
+      </ng-container>
+    </nz-space>
+  </nz-row>
+</ng-template>
+
+<ng-template #validBooking>
+  <h3 nz-typography>Booking data:</h3>
+  <span nz-typography> Email: {{ booking.email }}</span>
+  <span nz-typography> Location: {{ booking.location.name }}</span>
+  <span nz-typography> Date: {{ booking.date | date: 'MMM d, y, H:mm' }}</span>
+  <span nz-typography> Seats: {{ booking.seats }}</span>
+
+  <br />
+  <nz-row nzJustify="start">
+    <button
+      nz-button
+      class="std-width"
+      nzBlock
+      nzType="primary"
+      (click)="onCheckin()"
+    >
+      Check-in
     </button>
   </nz-row>
-</nz-col>
+</ng-template>

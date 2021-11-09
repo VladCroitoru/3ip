@@ -1,1 +1,21 @@
-<p>leaderboard works!</p>
+<nz-row nzJustify="center">
+  <nz-space nzDirection="vertical">
+    <h1 *nzSpaceItem>Leaderboard</h1>
+    <nz-row *nzSpaceItem>
+      <nz-select [(ngModel)]="type">
+        <nz-option
+          nzValue="garbage_weight"
+          nzLabel="Weight collected"
+        ></nz-option>
+        <nz-option nzValue="time_on_water" nzLabel="Time on water"></nz-option>
+      </nz-select>
+      <nz-select nzShowSearch [(ngModel)]="period">
+        <nz-option nzValue="today" nzLabel="Today"></nz-option>
+        <nz-option nzValue="this_week" nzLabel="This week"></nz-option>
+        <nz-option nzValue="this_month" nzLabel="This month"></nz-option>
+        <nz-option nzValue="this_season" nzLabel="This season"></nz-option>
+        <nz-option nzValue="all_time" nzLabel="All time"></nz-option>
+      </nz-select>
+    </nz-row>
+  </nz-space>
+</nz-row>

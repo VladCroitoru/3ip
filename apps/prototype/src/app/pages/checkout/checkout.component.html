@@ -1,1 +1,33 @@
-<p>checkout works!</p>
+<ng-container
+  *ngIf="hasBookingInProgress(); then validBooking; else confirm"
+></ng-container>
+
+<ng-template #confirm>
+  <nz-row nzJustify="center">
+    <nz-space nzDirection="vertical" nzSize="large">
+      <ng-container *nzSpaceItem>
+        <input
+          nz-input
+          class="std-width"
+          placeholder="Enter your Booking ID"
+          [(ngModel)]="bookingId"
+        />
+      </ng-container>
+      <ng-container *nzSpaceItem>
+        <button
+          nz-button
+          nzBlock
+          nzType="primary"
+          (click)="onConfirm()"
+          [disabled]="bookingId?.length === 0"
+        >
+          Confirm Booking ID
+        </button>
+      </ng-container>
+    </nz-space>
+  </nz-row>
+</ng-template>
+
+<ng-template #validBooking>
+  <h2 nz-typography>Please complete these steps:</h2>
+</ng-template>

@@ -1,6 +1,6 @@
 <nz-row nzJustify="center">
   <nz-space nzDirection="vertical" nzSize="large">
-    <h1 *nzSpaceItem>Welcome to the greenkayak app</h1>
+    <h2 *nzSpaceItem nz-typography>Welcome to the greenkayak app</h2>
     <button
       *nzSpaceItem
       nz-button
@@ -8,7 +8,7 @@
       nzType="primary"
       (click)="onCheckIn()"
     >
-      Go to check-in page
+      Check-in
     </button>
     <button
       *nzSpaceItem
@@ -17,8 +17,9 @@
       nzType="primary"
       (click)="onCheckOut()"
     >
-      Go to check-out page
+      Check-out
     </button>
+    <button *nzSpaceItem nz-button nzBlock nzType="primary">Map</button>
     <button
       *nzSpaceItem
       nz-button
