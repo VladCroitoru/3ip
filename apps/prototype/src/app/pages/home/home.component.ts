@@ -12,4 +12,16 @@ export class HomeComponent {
   onCheckIn() {
     this.router.navigateByUrl('/checkin');
   }
+
+  onCheckOut() {
+    this.router.navigateByUrl('/checkout');
+  }
+
+  onCheckLeaderboard() {
+    this.router.navigateByUrl('/leaderboard');
+  }
+
+  onAboutUs() {
+    this.router.navigateByUrl('/aboutus');
+  }
 }
