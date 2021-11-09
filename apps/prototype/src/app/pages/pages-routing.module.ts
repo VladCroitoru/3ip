@@ -3,11 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { CheckinComponent } from './checkin/checkin.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { HomeComponent } from './home/home.component';
+import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 
 const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+  },
+  {
+    path: 'leaderboard',
+    component: LeaderboardComponent,
   },
   {
     path: 'checkin/:id',
