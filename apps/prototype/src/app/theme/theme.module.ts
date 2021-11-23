@@ -27,6 +27,8 @@ import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
 import { NzTreeModule } from 'ng-zorro-antd/tree';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import { NzResultModule } from 'ng-zorro-antd/result';
+import { NzStepsModule } from 'ng-zorro-antd/steps';
 
 const MODULES = [
   NzAvatarModule,
@@ -58,6 +60,8 @@ const MODULES = [
   NzPaginationModule,
   NzTreeModule,
   NzCollapseModule,
+  NzResultModule,
+  NzStepsModule,
 ];
 
 @NgModule({
