@@ -30,7 +30,7 @@
 
 <ng-template #validBooking>
   <h3 nz-typography>Booking data:</h3>
-  <span nz-typography> Email: {{ booking.email }}</span>
+  <span nz-typography> Email: {{ booking.user.email }}</span>
   <span nz-typography> Location: {{ booking.location.name }}</span>
   <span nz-typography> Date: {{ booking.date | date: 'MMM d, y, H:mm' }}</span>
   <span nz-typography> Seats: {{ booking.seats }}</span>
