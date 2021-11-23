@@ -17,17 +17,13 @@ export class LeaderboardService {
     parameter: LeaderboardParameter
   ): Promise<Itinerary[]> {
     return new Promise((resolve, reject) => {
-      console.log(parameter);
       if (parameter === LeaderboardParameter.GARBAGE_WEIGHT) {
-        console.log('yo its garbage time');
         resolve(this.itineraries.sort(this.sortByProperty('garbageWeight')));
       }
       if (parameter === LeaderboardParameter.DISTANCE_ON_WATER) {
-        console.log('yo its distance time');
         resolve(this.itineraries.sort(this.sortByProperty('distance')));
       }
       if (parameter === LeaderboardParameter.TIME_ON_WATER) {
-        console.log('yo it time time');
         resolve(this.itineraries.sort(this.sortByProperty('duration')));
       }
       reject(new Error('Invalid parameter'));
