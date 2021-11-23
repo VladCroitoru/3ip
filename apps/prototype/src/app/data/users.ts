@@ -19,7 +19,7 @@ export const USERS: User[] = [
   },
   {
     id: '87ce7a13-5d6e-4672-983a-ff220457011e',
-    email: 'absolute.sustainability.god@gmail.com',
+    email: 'sustainability.god@gmail.com',
   },
   {
     id: 'a1d72725-9472-41b8-92e2-7a0b3c162bba',
