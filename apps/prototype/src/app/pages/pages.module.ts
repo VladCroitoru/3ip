@@ -6,8 +6,9 @@ import { CheckinComponent } from './checkin/checkin.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ThemeModule } from '../theme/theme.module';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
-import { DoneComponent } from './done/done.component';
 import { AboutComponent } from './about/about.component';
+import { CheckinDoneComponent } from './checkin-done/checkin-done.component';
+import { CheckoutDoneComponent } from './checkout-done/checkout-done.component';
 
 @NgModule({
   declarations: [
@@ -15,8 +16,9 @@ import { AboutComponent } from './about/about.component';
     CheckinComponent,
     CheckoutComponent,
     LeaderboardComponent,
-    DoneComponent,
     AboutComponent,
+    CheckinDoneComponent,
+    CheckoutDoneComponent,
   ],
   imports: [CommonModule, PagesRoutingModule, ThemeModule],
 })
