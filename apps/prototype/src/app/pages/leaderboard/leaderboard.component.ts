@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { LeaderboardPeriod, LeaderboardType } from './leaderboard.types';
+import { Itinerary } from '../../interfaces/itinerary.interface';
+import { LeaderboardService } from '../../services/leaderboard.service';
+import {
+  LeaderboardPeriod,
+  LeaderboardType,
+  LeaderboardParameter,
+} from './leaderboard.types';
+import * as util from './leaderboard.util';
 
 @Component({
   selector: 'prototype-leaderboard',
@@ -7,8 +14,29 @@ import { LeaderboardPeriod, LeaderboardType } from './leaderboard.types';
   styleUrls: ['./leaderboard.component.css'],
 })
 export class LeaderboardComponent implements OnInit {
-  type: LeaderboardType = 'garbage_weight';
-  period: LeaderboardPeriod = 'today';
+  util = util;
+  data: Itinerary[] = [];
 
-  ngOnInit(): void {}
+  typeEnum = LeaderboardType;
+  periodEnum = LeaderboardPeriod;
+  parametersEnum = LeaderboardParameter;
+  type: LeaderboardType = LeaderboardType.INDIVIDUAL;
+  period: LeaderboardPeriod = LeaderboardPeriod.THIS_MONTH;
+  parameters: LeaderboardParameter = LeaderboardParameter.GARBAGE_WEIGHT;
+
+  constructor(private readonly leaderboardService: LeaderboardService) {}
+
+  async ngOnInit(): Promise<void> {
+    await this.fetchData();
+  }
+
+  async fetchData(): Promise<void> {
+    this.data = [];
+    setTimeout(async () => {
+      this.data = await this.leaderboardService.getItineraries(
+        this.period,
+        this.parameters
+      );
+    }, 150);
+  }
 }

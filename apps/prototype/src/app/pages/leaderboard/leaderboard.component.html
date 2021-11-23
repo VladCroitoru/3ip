@@ -1,14 +1,8 @@
 <nz-row nzJustify="center">
   <nz-space nzDirection="vertical">
-    <h1 *nzSpaceItem>Leaderboard</h1>
+    <h1 *nzSpaceItem style="text-align: center">Leaderboard</h1>
+
     <nz-row *nzSpaceItem>
-      <nz-select [(ngModel)]="type">
-        <nz-option
-          nzValue="garbage_weight"
-          nzLabel="Weight collected"
-        ></nz-option>
-        <nz-option nzValue="time_on_water" nzLabel="Time on water"></nz-option>
-      </nz-select>
       <nz-select nzShowSearch [(ngModel)]="period">
         <nz-option nzValue="today" nzLabel="Today"></nz-option>
         <nz-option nzValue="this_week" nzLabel="This week"></nz-option>
@@ -16,6 +10,49 @@
         <nz-option nzValue="this_season" nzLabel="This season"></nz-option>
         <nz-option nzValue="all_time" nzLabel="All time"></nz-option>
       </nz-select>
+      <nz-select [(ngModel)]="parameters" (ngModelChange)="fetchData()">
+        <nz-option
+          nzValue="garbage_weight"
+          nzLabel="Weight collected"
+        ></nz-option>
+        <nz-option nzValue="time_on_water" nzLabel="Time on water"></nz-option>
+        <nz-option
+          nzValue="distance_on_water"
+          nzLabel="Distance on water"
+        ></nz-option>
+      </nz-select>
+      <nz-select nzShowSearch [(ngModel)]="type">
+        <nz-option nzValue="cumulative" nzLabel="Cumulative"></nz-option>
+        <nz-option nzValue="individual" nzLabel="Individual"></nz-option>
+      </nz-select>
+    </nz-row>
+
+    <nz-table
+      *nzSpaceItem
+      #leaderboard
+      [nzData]="data"
+      [nzFrontPagination]="false"
+    >
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>Weight</th>
+          <th>Duration</th>
+          <th>Distance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of leaderboard.data">
+          <td>{{ data.user.email }}</td>
+          <td>{{ util.toKg(data.garbageWeight) }} Kg</td>
+          <td>{{ util.toHours(data.duration) }} h</td>
+          <td>{{ util.toKm(data.distance) }} Km</td>
+        </tr>
+      </tbody>
+    </nz-table>
+
+    <nz-row *nzSpaceItem nzJustify="center">
+      <a nz-button nzType="link">Load more...</a>
     </nz-row>
   </nz-space>
 </nz-row>
