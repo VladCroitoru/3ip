@@ -1,11 +1,9 @@
+import { Location } from './location.interface';
+import { User } from './user.interface';
 export interface Booking {
   id: string;
-  email: string;
   date: Date;
   seats: number;
-  location: {
-    name: string;
-    address: string;
-    description: string;
-  };
+  user: User;
+  location: Location;
 }
