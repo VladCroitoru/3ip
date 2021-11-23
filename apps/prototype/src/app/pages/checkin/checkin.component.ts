@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Booking } from '../../interfaces/booking.interface';
 import { BookingService } from '../../services/booking.service';
 
@@ -14,6 +14,7 @@ export class CheckinComponent implements OnInit {
 
   constructor(
     private readonly route: ActivatedRoute,
+    private readonly router: Router,
     private readonly bookingService: BookingService
   ) {}
 
@@ -24,7 +25,9 @@ export class CheckinComponent implements OnInit {
   }
 
   async onCheckin(): Promise<void> {
-    alert('Check-in done');
+    setTimeout(() => {
+      this.router.navigateByUrl(`/checkin/${this.bookingId}/done`);
+    }, 250);
   }
 
   async onConfirm(): Promise<void> {
