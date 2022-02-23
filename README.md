@@ -1,17 +1,16 @@
 # 3IP project prototype
 
-## Team 4
+## Requirement
+```
+# It is recommended to run these versions
+# nvm version 0.37.2
+# node version 14.17.3
+# npm version 7.19.1
+# needs nx installed globally
+$ npm install -g nx
+```
 
-- Viktoria
-- Jens
-- Vlad
-
-## Backlog
-
-- [x] Set up frontend app
-- [x] Set up backend app
-- [x] Import frontend components
-- [x] Set up routing for frontend components
-- [ ] Set up a database (using a Docker container)
-- [ ] Connect backend to database
-- [ ] Add running instructions
+## Running
+```
+nx serve prototype
+```
