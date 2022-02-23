@@ -12,5 +12,8 @@ $ npm install -g nx
 
 ## Running
 ```
-nx serve prototype
+# install dependencies
+$ npm install
+# serve the prototype
+$ nx serve prototype
 ```
